@@ -2,13 +2,15 @@ import joblib
 import pandas as pd
 
 # 1. Carga el modelo desde el archivo
+```
 filename = 'modelo_fumador_final.joblib'
 modelo_cargado = joblib.load(filename)
-
 print("¡Modelo cargado exitosamente!")
+```
 
 # 2. Prepara nuevos datos para predecir (deben tener la misma estructura que tu X_train original)
 #    Aquí creamos un ejemplo con dos perfiles de personas.
+```
 nuevos_datos = pd.DataFrame({
     'gender': ['M', 'F'],
     'age': [35, 50],
@@ -26,11 +28,15 @@ nuevos_datos = pd.DataFrame({
     'dental caries': [1, 0],
     'tartar': ['Y', 'N']
 })
+```
 
 # 3. Usa el modelo cargado para hacer predicciones
+```
 predicciones = modelo_cargado.predict(nuevos_datos)
 probabilidades = modelo_cargado.predict_proba(nuevos_datos)
-
+```
+```
 print("\n--- Resultados de la Predicción ---")
 print(f"Predicciones (0=No Fumador, 1=Fumador): {predicciones}")
 print(f"Probabilidades [No Fumador, Fumador]: \n{probabilidades}")
+```
