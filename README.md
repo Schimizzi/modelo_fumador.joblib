@@ -5,7 +5,7 @@ import pandas as pd
 
 1. Carga el modelo desde el archivo
 ```
-filename = 'modelo_fumador_final.joblib'
+filename = 'modelo_fumador_xxx.joblib'
 modelo_cargado = joblib.load(filename)
 print("¡Modelo cargado exitosamente!")
 ```
